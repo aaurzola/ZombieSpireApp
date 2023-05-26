@@ -11,9 +11,11 @@ import { MaterialModule } from './shared/modules/material/material.module';
 import { ItemsComponent } from './pages/items/items.component';
 import { ManagementComponent } from './pages/management/management.component';
 import { PlayersComponent } from './pages/players/players.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HumanCardComponent, ItemsComponent, ManagementComponent, PlayersComponent],
+  declarations: [AppComponent, NavbarComponent, HumanCardComponent, ItemsComponent, ManagementComponent, PlayersComponent, FooterComponent, LayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
