@@ -3,11 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0px;
-
-  width: 300px;
   height: 400px;
-
-  background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   overflow: hidden;
@@ -29,13 +25,6 @@
     position: absolute;
     right: 24px;
   }
-}
-
-.cards-container {
-  padding: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 .stats-container {
@@ -71,7 +60,3 @@ height: 62px;
 
 background: #9DE3B5;
 }
-
-// .false-icon {
-//   visibility: hidden;
-// }

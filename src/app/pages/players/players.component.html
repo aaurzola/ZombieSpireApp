@@ -1,3 +1,4 @@
 <div class="cards-container">
   <app-human-card *ngFor="let human of humanList" [human]="human"></app-human-card>
+  <h1 class="empty-alert" *ngIf="!humanList">No players found</h1>
 </div>

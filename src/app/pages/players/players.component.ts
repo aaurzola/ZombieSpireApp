@@ -8,7 +8,7 @@ import { HumanService } from 'src/app/services/human.service';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
-  humanList: Human[] = [];
+  humanList: Human[] | null = null;
 
   constructor(private humanService: HumanService) { }
 
