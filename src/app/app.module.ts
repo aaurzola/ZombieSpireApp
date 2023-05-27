@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HumanCardComponent } from './components/human-card/human-card.component';
+import { PlayerComponent } from './components/player/player.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { ItemsComponent } from './pages/items/items.component';
@@ -16,14 +16,24 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HumanCardComponent, ItemsComponent, ManagementComponent, PlayersComponent, FooterComponent, LayoutComponent, ItemComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    ItemsComponent,
+    ManagementComponent,
+    PlayersComponent,
+    FooterComponent,
+    LayoutComponent,
+    ItemComponent,
+    PlayerComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
