@@ -13,4 +13,8 @@ export class ItemService {
   getAllItems() {
     return this.http.get<Item[]>(this.baseUrl);
   }
+
+  getPlayerItems(id: number) {
+    return this.http.get<Item[]>(`${this.baseUrl}/human/${id}`);
+  }
 }

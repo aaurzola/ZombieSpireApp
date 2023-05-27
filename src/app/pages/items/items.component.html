@@ -1,6 +1,7 @@
 <div class="main">
   <div class="player-item-container">
     <div class="player-list">
+      <app-player-info (selectedPlayerId)="playerItems($event)" *ngFor="let player of playerList" [player]="player"></app-player-info>
     </div>
     <div class="player-item">
       <app-item *ngFor="let item of itemList" [item]="item"></app-item>

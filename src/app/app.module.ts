@@ -14,6 +14,7 @@ import { PlayersComponent } from './pages/players/players.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ItemComponent } from './components/item/item.component';
+import { PlayerInfoComponent } from './components/player-info/player-info.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ItemComponent } from './components/item/item.component';
     LayoutComponent,
     ItemComponent,
     PlayerComponent,
+    PlayerInfoComponent,
   ],
   imports: [
     BrowserModule,
