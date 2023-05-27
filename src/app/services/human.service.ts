@@ -6,7 +6,7 @@ import { Human } from '../models/human';
   providedIn: 'root',
 })
 export class HumanService {
-  private baseUrl = 'http://localhost:8080/zombierpg/api/v1/humans';
+  baseUrl = 'http://localhost:8080/zombierpg/api/v1/humans';
 
   constructor(private http: HttpClient) {}
 

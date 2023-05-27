@@ -1,0 +1,27 @@
+<div class="item-card">
+  <div class="item-title">
+    <span>{{item?.name}}</span>
+    <span
+    [ngClass]="{'common':item?.rarity === 1, 'uncommon':item?.rarity === 2, 'rare':item?.rarity === 3 }"
+    >[{{item?.rarity}}]</span>
+  </div>
+  <div class="item-description">
+    <p>{{item?.description}}</p>
+  </div>
+  <div class="item-footer">
+    <div class="actions">
+      <a><mat-icon class="red-icon">work_off</mat-icon></a>
+      <a><mat-icon class="green-icon">play_arrow</mat-icon></a>
+    </div>
+    <div class="property-container">
+      <div class="property">
+        <mat-icon>gavel</mat-icon>
+        <span>{{item?.damage}}</span>
+      </div>
+      <div class="property">
+        <mat-icon>gpp_good</mat-icon>
+        <span>{{item?.durability}}</span>
+      </div>
+    </div>
+  </div>
+</div>

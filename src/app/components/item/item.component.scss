@@ -1,0 +1,63 @@
+.item-card {
+  background-color: white;
+  outline: 1px solid rgb(177, 177, 177);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(30, 30, 30);
+  font-size: 18px;
+  justify-content: space-between;
+}
+
+.item-description {
+  font-style: italic;
+  color: gray;
+  font-size: 12px;
+}
+
+.property-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgb(128, 141, 148);
+  gap: 4px;
+  width: 80px
+
+}
+
+.item-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.actions {
+  gap: 300px;
+}
+
+
+.property {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rare {
+  color: goldenrod;
+}
+
+.common {
+  color: rgb(183, 182, 179);
+}
+
+.uncommon {
+  color: rgb(106, 102, 88);
+}

@@ -1,1 +1,10 @@
-<p>items works!</p>
+<div class="main">
+  <div class="player-item-container">
+    <div class="player-list">
+    </div>
+    <div class="player-item">
+      <app-item *ngFor="let item of itemList" [item]="item"></app-item>
+    </div>
+  </div>
+  <div class="item-detail"></div>
+</div>
