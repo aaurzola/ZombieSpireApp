@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Item } from 'src/app/models/item';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { PlayerItem } from 'src/app/models/item';
 
 @Component({
   selector: 'app-item',
@@ -7,11 +7,21 @@ import { Item } from 'src/app/models/item';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-  @Input() item: Item | null = null;
+  @Input() item: PlayerItem | null = null;
+  @Output() selectedItem = new EventEmitter<number>();
+  @Output() selectedItemToDelete = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  useItem() {
+    this.selectedItem.emit(this.item!.id);
+  }
+
+  deleteItem() {
+    this.selectedItemToDelete.emit(this.item!.id);
   }
 
 }

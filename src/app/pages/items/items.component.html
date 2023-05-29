@@ -1,10 +1,14 @@
 <div class="main">
   <div class="player-item-container">
     <div class="player-list">
-      <app-player-info (selectedPlayerId)="playerItems($event)" *ngFor="let player of playerList" [player]="player"></app-player-info>
+      <app-player-info (selectedPlayerId)="showPlayerItems($event)" *ngFor="let player of playerList" [player]="player"></app-player-info>
+      <a>All items</a>
     </div>
     <div class="player-item">
-      <app-item *ngFor="let item of itemList" [item]="item"></app-item>
+      <app-item (selectedItemToDelete)="deleteItem($event)" (selectedItem)="useItem($event)" *ngFor="let item of playerItemList" [item]="item"></app-item>
+      <ng-container *ngIf="playerItemList.length == 0">
+        <h1 class="no-info-found">No items</h1>
+      </ng-container>
     </div>
   </div>
   <div class="item-detail"></div>

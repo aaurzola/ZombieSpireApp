@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Human } from 'src/app/models/human';
-import { Item } from 'src/app/models/item';
+import { PlayerItem } from 'src/app/models/item';
 import { HumanService } from 'src/app/services/human.service';
 import { ItemService } from 'src/app/services/item.service';
+import { PlayerItemService } from 'src/app/services/player-item.service';
 
 @Component({
   selector: 'app-items',
@@ -10,26 +11,42 @@ import { ItemService } from 'src/app/services/item.service';
   styleUrls: ['./items.component.scss'],
 })
 export class ItemsComponent implements OnInit {
-  itemList: Item[] = [];
+  playerItemList: PlayerItem[] = [];
   playerList: Human[] = [];
 
   constructor(
     private itemService: ItemService,
-    private humanService: HumanService
-    ) {}
+    private humanService: HumanService,
+    private playerItemService: PlayerItemService
+  ) {}
 
   ngOnInit(): void {
-    this.itemService.getAllItems().subscribe((data: Item[]) => {
-      this.itemList = data;
-    });
     this.humanService.getAllHumans().subscribe((data: Human[]) => {
       this.playerList = data;
     });
   }
 
-  playerItems(id: number) {
-    this.itemService.getPlayerItems(id).subscribe((data: Item[]) => {
-      this.itemList = data;
+  showPlayerItems(id: number) {
+    this.itemService.getPlayerItems(id).subscribe((data: PlayerItem[]) => {
+      this.playerItemList = data;
     });
+  }
+
+  useItem(playerItemId: number) {
+    this.playerItemService.reduceItemDurability(playerItemId).subscribe(
+      (data) => {
+        let itemIndex = this.playerItemList.findIndex((item) => item.id == playerItemId);
+        this.playerItemList[itemIndex] = data;
+      }
+    );
+  }
+
+  deleteItem(playerItemId: number) {
+    console.log('deleting id: ' + playerItemId);
+    this.playerItemService.deletePlayerItem(playerItemId).subscribe(
+      () => {
+        let itemIndex = this.playerItemList.findIndex((item) => item.id == playerItemId);
+        this.playerItemList.splice(itemIndex, 1);
+      });
   }
 }

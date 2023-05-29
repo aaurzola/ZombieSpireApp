@@ -1,8 +1,12 @@
 export interface Item {
   id?: number,
   name: string,
-  durability: number,
+  durability?: number,
   damage: number,
-  rarity: number,
+  rarity: string,
   description: string | null
+}
+
+export interface PlayerItem extends Item, Omit<Item, 'durability'> {
+  currentDurability: number;
 }
