@@ -1,5 +1,6 @@
 export interface Item {
   id?: number,
+  type: string,
   name: string,
   durability?: number,
   damage: number,

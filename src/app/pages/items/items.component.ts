@@ -13,6 +13,8 @@ import { PlayerItemService } from 'src/app/services/player-item.service';
 export class ItemsComponent implements OnInit {
   playerItemList: PlayerItem[] = [];
   playerList: Human[] = [];
+  selectedPlayer: string = 'player';
+  searchCriteria: string = '';
 
   constructor(
     private itemService: ItemService,
@@ -26,8 +28,8 @@ export class ItemsComponent implements OnInit {
     });
   }
 
-  showPlayerItems(id: number) {
-    this.itemService.getPlayerItems(id).subscribe((data: PlayerItem[]) => {
+  showPlayerItems(player: Human) {
+    this.itemService.getPlayerItems(player.id!).subscribe((data: PlayerItem[]) => {
       this.playerItemList = data;
     });
   }
@@ -47,6 +49,24 @@ export class ItemsComponent implements OnInit {
       () => {
         let itemIndex = this.playerItemList.findIndex((item) => item.id == playerItemId);
         this.playerItemList.splice(itemIndex, 1);
-      });
+      }, );
+  }
+
+  playerName(player: Human) {
+    this.selectedPlayer = player.name;
+  }
+
+  searchItem() {
+  }
+
+  giveItem(player: Human) {
+    this.playerItemService.giveItem(player.id!).subscribe(
+      (data) => {
+        alert(data.name);
+        this.itemService.getPlayerItems(player.id!).subscribe(
+          (data) => {
+            this.playerItemList = data;
+          }
+    )});
   }
 }

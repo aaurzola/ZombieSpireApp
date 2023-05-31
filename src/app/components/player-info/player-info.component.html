@@ -1,3 +1,38 @@
-<a (click)="selectPlayer(player)">
-  <p>{{player.name}}</p>
-</a>
+<div class="player-info-container">
+  <div class="player-info-title">
+      <button (click)="addItem(player)">
+        <mat-icon>playlist_add</mat-icon>
+      </button>
+      <span>{{player.name}}</span>
+      <button (click)="selectPlayer(player)">
+        <mat-icon>backpack</mat-icon>
+      </button>
+  </div>
+  <div class="sumary-container">
+    <div class="player-stats">
+      <div class="stat" id="strength">
+        <mat-icon>fitness_center</mat-icon>
+        <span>{{player.strength}}</span>
+      </div>
+      <div class="stat" id="aim">
+        <mat-icon>my_location</mat-icon>
+        <span>{{player.aim}}</span>
+      </div>
+      <div class="stat" id="luck">
+        <mat-icon>mood</mat-icon>
+        <span>{{player.luck}}</span>
+      </div>
+      <div class="stat" id="endurance">
+        <mat-icon>monitor_heart</mat-icon>
+        <span>{{player.endurance}}</span>
+      </div>
+      <div class="stat" id="agility">
+        <mat-icon>directions_run</mat-icon>
+        <span>{{player.agility}}</span>
+      </div>
+    </div>
+    <div class="item-counter">
+      <span>4/10</span>
+    </div>
+  </div>
+</div>

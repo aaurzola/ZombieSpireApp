@@ -4,11 +4,11 @@ import { Human } from 'src/app/models/human';
 @Component({
   selector: 'app-player-info',
   templateUrl: './player-info.component.html',
-  styleUrls: ['./player-info.component.scss']
+  styleUrls: ['./player-info.component.scss'],
 })
 export class PlayerInfoComponent implements OnInit {
-
-  @Output() selectedPlayerId = new EventEmitter<number>();
+  @Output() selectedPlayer = new EventEmitter<Human>();
+  @Output() addPlayerItem = new EventEmitter<Human>();
 
   @Input() player: Human = {
     name: '',
@@ -17,15 +17,18 @@ export class PlayerInfoComponent implements OnInit {
     agility: 0,
     luck: 0,
     health: 0,
-    endurance: 0
-  }
+    endurance: 0,
+  };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   selectPlayer(player: Human) {
-    this.selectedPlayerId.emit(player.id);
+    this.selectedPlayer.emit(player);
+  }
+
+  addItem(player: Human) {
+    this.addPlayerItem.emit(player);
   }
 }

@@ -1,0 +1,65 @@
+.player-info-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding: 12px;
+}
+
+.player-info-title {
+  display: flex;
+  flex-direction: row;
+  color: rgb(40, 75, 87);
+  text-align: center;
+  font-size: 30px;
+  height: 100%;
+  margin-bottom: 24px;
+  justify-content: space-between;
+}
+
+span {
+  text-align: center;
+}
+
+.sumary-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: gray;
+}
+
+.player-stats {
+  gap: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+button {
+  border-style: none;
+  background-color: white;
+  padding: 5px;
+  margin: 0;
+  cursor: pointer;
+  outline: 1px solid rgb(234, 234, 234);
+  border-radius: 4px;
+  color: rgb(125, 125, 125);
+}
+
+.item-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

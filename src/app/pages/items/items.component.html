@@ -1,14 +1,29 @@
 <div class="main">
   <div class="player-item-container">
     <div class="player-list">
-      <app-player-info (selectedPlayerId)="showPlayerItems($event)" *ngFor="let player of playerList" [player]="player"></app-player-info>
-      <a>All items</a>
+      <app-player-info
+        (selectedPlayer)="showPlayerItems($event)"
+        (addPlayerItem)="giveItem($event)"
+        (selectedPlayer)="playerName($event)"
+        *ngFor="let player of playerList"
+        [player]="player"
+        >
+      </app-player-info>
     </div>
     <div class="player-item">
-      <app-item (selectedItemToDelete)="deleteItem($event)" (selectedItem)="useItem($event)" *ngFor="let item of playerItemList" [item]="item"></app-item>
-      <ng-container *ngIf="playerItemList.length == 0">
-        <h1 class="no-info-found">No items</h1>
-      </ng-container>
+      <div class="player-item-header">
+        <h1>{{selectedPlayer | possessive}} Items</h1>
+        <div class="search">
+          <mat-icon>search</mat-icon>
+          <input (keydown)="searchItem()" type="text" [(ngModel)]="searchCriteria" placeholder="Axe">
+        </div>
+      </div>
+      <div class="player-item-list">
+        <app-item (selectedItemToDelete)="deleteItem($event)" (selectedItem)="useItem($event)" *ngFor="let item of playerItemList" [item]="item"></app-item>
+        <ng-container *ngIf="playerItemList.length == 0">
+          <h1 class="no-info-found">No items</h1>
+        </ng-container>
+      </div>
     </div>
   </div>
   <div class="item-detail"></div>

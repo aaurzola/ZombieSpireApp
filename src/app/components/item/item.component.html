@@ -1,7 +1,10 @@
 <div class="item-card">
-  <div class="item-title">
-    <span>{{item?.name}}</span>
-    <span>{{item?.rarity}}</span>
+  <div class="item-header">
+    <div class="item-title">
+      <span>{{item?.name}}</span>
+      <span id="item-type">{{item?.type}}</span>
+    </div>
+    <span style="font-size: 14px">{{item?.rarity}}</span>
   </div>
   <div class="item-description">
     <p>{{item?.description}}</p>
@@ -9,6 +12,7 @@
   <div class="item-footer">
     <div class="actions">
       <a (click)="deleteItem()"><mat-icon class="red-icon">clear</mat-icon></a>
+      <a><mat-icon class="green-icon">call_made</mat-icon></a>
       <a *ngIf="item?.currentDurability != 0" (click)="useItem()"><mat-icon class="blue-icon">touch_app</mat-icon></a>
     </div>
     <div class="property-container">
