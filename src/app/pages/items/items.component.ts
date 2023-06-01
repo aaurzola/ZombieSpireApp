@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Human } from 'src/app/models/human';
+import { Item } from 'src/app/models/item';
 import { PlayerItem } from 'src/app/models/item';
 import { HumanService } from 'src/app/services/human.service';
 import { ItemService } from 'src/app/services/item.service';
@@ -68,5 +69,6 @@ export class ItemsComponent implements OnInit {
             this.playerItemList = data;
           }
     )});
+    this.selectedPlayer = player.name;
   }
 }
