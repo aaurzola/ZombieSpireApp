@@ -14,7 +14,7 @@ import { ManagementComponent } from './pages/management/management.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LayoutComponent } from './components/layout/layout.component';
-import { ItemComponent } from './components/item/item.component';
+import { PlayerItemComponent } from './components/player-item/player-item.component';
 import { PlayerInfoComponent } from './components/player-info/player-info.component';
 import { PossessivePipe } from './pipes/possessive.pipe';
 
@@ -27,7 +27,7 @@ import { PossessivePipe } from './pipes/possessive.pipe';
     PlayersComponent,
     FooterComponent,
     LayoutComponent,
-    ItemComponent,
+    PlayerItemComponent,
     PlayerComponent,
     PlayerInfoComponent,
     PossessivePipe,

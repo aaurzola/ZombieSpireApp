@@ -2,19 +2,18 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { PlayerItem } from 'src/app/models/item';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+  selector: 'player-item-app',
+  templateUrl: './player-item.component.html',
+  styleUrls: ['./player-item.component.scss'],
 })
-export class ItemComponent implements OnInit {
+export class PlayerItemComponent implements OnInit {
   @Input() item: PlayerItem | null = null;
   @Output() selectedItem = new EventEmitter<number>();
   @Output() selectedItemToDelete = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   useItem() {
     this.selectedItem.emit(this.item!.id);
@@ -23,5 +22,4 @@ export class ItemComponent implements OnInit {
   deleteItem() {
     this.selectedItemToDelete.emit(this.item!.id);
   }
-
 }

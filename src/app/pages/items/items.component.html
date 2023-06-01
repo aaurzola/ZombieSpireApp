@@ -19,12 +19,14 @@
         </div>
       </div>
       <div class="player-item-list">
-        <app-item (selectedItemToDelete)="deleteItem($event)" (selectedItem)="useItem($event)" *ngFor="let item of playerItemList" [item]="item"></app-item>
+        <player-item-app (selectedItemToDelete)="deleteItem($event)" (selectedItem)="useItem($event)" *ngFor="let item of playerItemList" [item]="item"></player-item-app>
         <ng-container *ngIf="playerItemList.length == 0">
           <h1 class="no-info-found">Select a player</h1>
         </ng-container>
       </div>
     </div>
   </div>
-  <div class="item-detail"></div>
+  <div class="item-detail">
+
+  </div>
 </div>
