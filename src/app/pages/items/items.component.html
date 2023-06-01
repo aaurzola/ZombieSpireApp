@@ -21,7 +21,7 @@
       <div class="player-item-list">
         <app-item (selectedItemToDelete)="deleteItem($event)" (selectedItem)="useItem($event)" *ngFor="let item of playerItemList" [item]="item"></app-item>
         <ng-container *ngIf="playerItemList.length == 0">
-          <h1 class="no-info-found">No items</h1>
+          <h1 class="no-info-found">Select a player</h1>
         </ng-container>
       </div>
     </div>
